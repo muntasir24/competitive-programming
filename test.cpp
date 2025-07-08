@@ -16,7 +16,7 @@ cin.tie(NULL);
     while (test_case--)
     {  
 
-   cout<<test_case+1;
+cout<<"moon"<<endl;
 
 
 
