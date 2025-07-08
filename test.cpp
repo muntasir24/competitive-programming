@@ -16,7 +16,7 @@ cin.tie(NULL);
     while (test_case--)
     {  
  
-cout<<"hello iomtius from pc"
+cout<<"hello iomtius from laptop"
 
 
 
