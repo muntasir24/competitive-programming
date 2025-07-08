@@ -10,19 +10,22 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     ll test_case;
-   
     cin >> test_case;
-    
     while (test_case--)
     {  
  
-cout<<"hello iomtius from laptop"
+
+dfjsdflknf
+
+
+        
+    
 
 
 
 //cout << (flag ==1 ? "YES" : "NO") << "\n";
 
- }
+    }
     
     return 0;
-}
+}jdnfsdvsd
