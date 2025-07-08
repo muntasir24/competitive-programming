@@ -15,7 +15,7 @@ cin.tie(NULL);
     {  
  
 
-from PC
+from laptop
 
 
         
