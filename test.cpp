@@ -16,7 +16,7 @@ cin.tie(NULL);
     while (test_case--)
     {  
 
-cout<<"moofdsfng"<<endl;
+cout<<"moooooon"<<endl;
 
 
 
