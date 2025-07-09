@@ -14,8 +14,15 @@ cin.tie(NULL);
     while (test_case--)
     {  
  
+int n;
+cin>>n;
+for (int i = 0; i < n; ++i)
+{
+     cin>>n;
+}
+sort(v.begin(),v.end());
 
-from laptop
+
 
 
         
@@ -28,4 +35,4 @@ from laptop
     }
     
     return 0;
-}jdnfsdvsd
+}
