@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -45,25 +44,68 @@ for (int i = 0; i < n; ++i)
 //     }
 //     cout<<endl;
 // }
-int found,ok,idx;
+int found,ok,idx1,idx2,r=0,c=0;
 for (int i = 0; i < m; ++i)
-{
+
+{ 
+	
+	found=0;
     for (int j = 0; j < n; ++j)
     {
-        found=0;
+       
+        idx1=-1;
         for (int k = 0; k < m; ++k)
         {
-            if(vt[i]==v[i][j]){
-
+            if(vt[i]==v[j][k] and found==0){
+             found=1;
+             idx1=j;
+             idx2=k;
+             break;
             }
 
-            if
+            if((v[j][k]!=0 and idx1==-1)){
+            	idx1=j;
+            	idx2=k;
+            }
 
             
         }
+        if(found==1){
+found++;
+ans[j][i]=v[idx1][idx2];
+ v[idx1][idx2]=0;
+        }
+        else{
+        	ans[j][i]=v[idx1][idx2];
+        	v[idx1][idx2]=0;
+        }
+        
+
+
     }
+// cout<<"for : "<<i<<endl;
+//     for (int l = 0; l <n ; ++l)
+//     {
+//     	for (int r = 0; r < m; ++r)
+//     	{
+//     		cout<<v[l][r]<<" ";
+//     	}
+//     	cout<<endl;
+//     }
+//     cout<<endl;
+   
 }
 
+
+    for (int l = 0; l <n ; ++l)
+    {
+    	for (int r = 0; r < m; ++r)
+    	{
+    		cout<<ans[l][r]<<" ";
+    	}
+    	cout<<endl;
+    }
+   
 
 //cout << (flag ==1 ? "YES" : "NO") << "\n";
 
@@ -71,4 +113,4 @@ for (int i = 0; i < m; ++i)
     
     return 0;
 }
->>>>>>> 2438bc94b25e34156c9f60c933a2d52a8d91c162
+
