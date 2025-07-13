@@ -40,18 +40,22 @@ for (int i = 0; i < n; ++i)
       p2--;
    }
    else{
+
       ttp=v[n-1];
       tp1=p1;
     tp2=p2;
 
       int k=n-1;
       while(i<k){
-if(ttp==tp1){
+         cout<<tp<<" "<<ttp<<" "<<tp1<<" "<<tp2<<endl;
+if(ttp==tp1 or tp==tp1){
 tp1++;
+
 }
-if(ttp==tp2){
+else if(ttp==tp2 or tp==tp2){
 tp2--;
 }
+
 else{
    //ans
 vector<int> vc = {tp, ttp, tp1, tp2};
@@ -60,13 +64,17 @@ vector<int> vc = {tp, ttp, tp1, tp2};
       flag=1;
       break;
     }
+         
 
 
 
 }
 k--;
+ttp=v[k];
+
       }
    }
+  
    if(flag)break;
    
 }
