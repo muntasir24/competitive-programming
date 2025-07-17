@@ -15,75 +15,50 @@ cin.tie(NULL);
     
     while (test_case--)
     {  
-
-   
-int n,p1,p2,tp,ttp,tp2,tp1;
+int n,m;
 cin>>n;
-vector<int>v(n);
-map<int,int>mp;
-
-for (int i = 0; i < n; ++i)
-{
-   cin>>v[i];
-   mp[v[i]]=i+1;
-}
-
-p1=1,p2=n;
-int flag=0;
-for (int i = 0; i < n; ++i)
-{
-   tp=v[i];
-   if(tp==p1){
-      p1++;
-   }
-   else if(tp==p2){
-      p2--;
-   }
-   else{
-
-      ttp=v[n-1];
-      tp1=p1;
-    tp2=p2;
-
-      int k=n-1;
-      while(i<k){
-         cout<<tp<<" "<<ttp<<" "<<tp1<<" "<<tp2<<endl;
-if(ttp==tp1 or tp==tp1){
-tp1++;
-
-}
-else if(ttp==tp2 or tp==tp2){
-tp2--;
-}
-
-else{
-   //ans
-vector<int> vc = {tp, ttp, tp1, tp2};
-    sort(vc.begin(), vc.end());
-    if(vc[0]!=ttp and vc[3]!=ttp and vc[0]!=tp and vc[3]!=tp ){
-      flag=1;
-      break;
-    }
-         
-
-
-
-}
-k--;
-ttp=v[k];
-
-      }
-   }
   
-   if(flag)break;
+   vector<vector<int>>v(n,vector<int>(n));
+
+string row;
+
+for (int i = 0; i < n; ++i)
+{
+   cin>>row;
+   for (int j = 0; j < n; ++j)
+   {
+   v[i][j]=row[j]-'0';
+   }
+}
+ll cnt=n,ans=0;
+n-=1;
+for (int i = 0; i <(n+1)/2; ++i)
+{
+   cnt-=1;
+   for (int j =i; j < cnt; ++j)
+   {
+      int cnt1=0,cnt0=0;
+      if(v[i][j]==0)cnt0++;
+      else cnt1++;
+
+      if(v[j][n-i]==0)cnt0++;
+         else cnt1++;
+
+      if(v[n-i][n-j]==0)cnt0++;
+      else cnt1++;
+
+   if(v[n-j][i]==0)cnt0++;
+   else cnt1++;
+   ans+=min(cnt0,cnt1);
+      // cout<<cnt0<<" "<<cnt1<<endl;
+   //cout<<i<<j<<" "<<j<<n-i<<" "<<n-i<<n-j<<" "<<n-j<<i<<endl;
+
+   }
+   
    
 }
 
-if(flag){
-   cout<<min(mp[ttp],mp[tp])<<" "<<max(mp[ttp],mp[tp])<<endl;
-}
-else 
-cout<<"-1"<<endl;
+cout<<ans<<endl;
 
 //cout << (flag ==1 ? "YES" : "NO") << "\n";
 
