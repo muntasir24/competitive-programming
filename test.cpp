@@ -1,71 +1,28 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define ll long long
-#define endl '\n'
-  
+bool checkWithNFA(const string& str) {
+    bool s0 = true, s1 = false, s2 = false;
 
-int main(){
+    for (char ch : str) {
+        if (ch != '0' && ch != '1') return false;
 
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
+        bool n0 = false, n1 = false, n2 = false;
 
-    ll test_case;
-    cin >> test_case;
-    while (test_case--)
-    {  
- 
+        if (s0) {
+            if (ch == '0') {
+                n0 = true;
+                n1 = true;
+            } else {
+                n0 = true;
+            }
+        }
 
-ll n,m;
-cin>>n>>m;
-vector<vector<int>>v(n,vector<int>(m,0));
-vector<vector<int>>ans(n,vector<int>(m,0));
-vector<ll> vt;
-for (int i = 0; i < n; ++i)
-{
-    for (int j = 0; j < m; ++j)
-    {
-        cin>>v[i][j];
-        vt.push_back(v[i][j]);
-    }
-}
-sort(vt.begin(),vt.end());
+        if (s1 && ch == '1') {
+            n2 = true;
+        }
 
-for (int i = 0; i < n; ++i)
-{
-    sort(v[i].rbegin(),v[i].rend());
-}
+        s0 = n0;
+        s1 = n1;
+        s2 = n2;
+    }
 
-// for (int i = 0; i < n; ++i)
-// {
-//     for (int j = 0; j < m; ++j)
-//     {
-//         cout<<v[i][j]<<" ";
-//     }
-//     cout<<endl;
-// }
-int found,ok,idx;
-for (int i = 0; i < m; ++i)
-{
-    for (int j = 0; j < n; ++j)
-    {
-        found=0;
-        for (int k = 0; k < m; ++k)
-        {
-            if(vt[i]==v[i][j]){
-
-            }
-
-            if
-
-            
-        }
-    }
-}
-
-
-//cout << (flag ==1 ? "YES" : "NO") << "\n";
-
-    }
-    
-    return 0;
+    return s2;
 }

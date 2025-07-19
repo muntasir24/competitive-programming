@@ -1,1 +1,6 @@
 C:\Users\moon\AppData\Roaming\Sublime Text\Packages\User
+
+//laptop
+
+C:\Users\azizm\AppData\Roaming\Sublime Text\Packages\User
+
